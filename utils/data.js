@@ -1,4 +1,20 @@
+import bcrypt from 'bcryptjs';
+
 const data = {
+  users: [
+    {
+      name: 'John',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: true,
+    },
+    {
+      name: 'Jane',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('123456'),
+      isAdmin: false,
+    },
+  ],
   products: [
     {
       name: 'Free Shirt',
@@ -11,6 +27,8 @@ const data = {
       numReviews: 8,
       countInStock: 20,
       description: 'A popular shirt',
+      isFeatured: true,
+      banner: '/images/banner1.jpg',
     },
     {
       name: 'Fit Shirt',
@@ -23,9 +41,11 @@ const data = {
       numReviews: 10,
       countInStock: 20,
       description: 'A popular shirt',
+      isFeatured: true,
+      banner: '/images/banner2.jpg',
     },
     {
-      name: 'Siim Shirt',
+      name: 'Slim Shirt',
       slug: 'slim-shirt',
       category: 'Shirts',
       image: '/images/shirt3.jpg',
@@ -49,7 +69,7 @@ const data = {
       description: 'Smart looking pants',
     },
     {
-      named: 'Fit Pants',
+      name: 'Fit Pants',
       slug: 'fit-pants',
       category: 'Pants',
       image: '/images/pants2.jpg',

@@ -65,7 +65,7 @@ export default function Layout({ title, children }) {
                 <SearchIcon className="h-5 w-5"></SearchIcon>
               </button>
             </form>
-            <div>
+            <div className="min-w-fit">
               <Link href="/cart">
                 <span className="p-2">
                   Cart
@@ -80,7 +80,7 @@ export default function Layout({ title, children }) {
               {status === 'loading' ? (
                 'Loading...'
               ) : session?.user ? (
-                <Menu as="div" className="relative inline-block">
+                <Menu as="div" className="relative inline-block z-50">
                   <Menu.Button className="text-blue-600">
                     {session.user.name}
                   </Menu.Button>
@@ -129,7 +129,8 @@ export default function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          Copyright © 2022 Amazona
+          Copyright © 2022 Amazona - Simple portfolio of
+          behrouz.shafaati@gmail.com
         </footer>
       </div>
     </>

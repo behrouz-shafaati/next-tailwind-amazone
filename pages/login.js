@@ -17,12 +17,16 @@ export default function LoginScreen() {
     if (session?.user) {
       router.push(redirect || '/');
     }
+
+    setValue('email', 'admin@example.com');
+    setValue('password', '123456');
   }, [router, session, redirect]);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm();
 
   const submitHandler = async ({ email, password }) => {

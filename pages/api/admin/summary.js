@@ -6,7 +6,7 @@ import db from '../../../utils/db';
 
 const handler = async (req, res) => {
   const user = await getToken({ req, secret: process.env.SECRET });
-  if (!user) {
+  if (!user || (user && !user.isAdmin)) {
     return res.status(401).send('Admin signin required');
   }
 

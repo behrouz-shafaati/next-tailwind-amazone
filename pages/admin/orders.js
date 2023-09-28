@@ -47,7 +47,7 @@ export default function AdminOrderScreen() {
             </li>
             <li>
               <Link href="/admin/orders">
-                <a className="font-bold">Orders</a>
+                <span className="font-bold">Orders</span>
               </Link>
             </li>
             <li>
@@ -102,7 +102,7 @@ export default function AdminOrderScreen() {
                       </td>
                       <td className="p-5">
                         <Link href={`/order/${order._id}`} passHref>
-                          <a>Details</a>
+                          <span>Details</span>
                         </Link>
                       </td>
                     </tr>
